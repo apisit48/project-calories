@@ -6,6 +6,8 @@ Pages
         - Calculator
         - Workout
         - Guide
+        - Register
+        - Login
 
 1. HomeView
     - Workout
@@ -22,3 +24,4 @@ Pages
 
 5. Register and Login Pages
 
+6.FoodView

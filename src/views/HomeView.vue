@@ -2,14 +2,15 @@
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="home-container">
+        <h1> Food</h1>
+        <h1> Exercise</h1>
+  </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .about {
+  .home-container {
     min-height: 100vh;
     display: flex;
     align-items: center;
