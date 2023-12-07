@@ -1,10 +1,11 @@
 <script setup>
+
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="login">
+    <h1>Login</h1>
+</div>
 </template>
 
 <style>

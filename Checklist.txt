@@ -1,0 +1,24 @@
+Pages
+
+0.App.vue
+    - Router
+        - Home
+        - Calculator
+        - Workout
+        - Guide
+
+1. HomeView
+    - Workout
+    - Food
+2. CalorieCalculatorView
+    - Calculator for Checking BMI
+    - Cheat sheet to calculate calorie for today
+3. WorkoutView
+    - Show workout for weight loss
+    - Show workout for increasing muscle
+
+4. Beginner Guide
+    - Instruction for beginner about how to eat, or which exercise is for user's goal
+
+5. Register and Login Pages
+
