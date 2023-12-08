@@ -3,14 +3,14 @@
 </script>
 
 <template>
-  <div class="login">
-    <h1>calculator</h1>
+  <div class="calculator">
+    <h1>Calculator</h1>
 </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .login {
+  .calculator {
     min-height: 100vh;
     display: flex;
     align-items: center;

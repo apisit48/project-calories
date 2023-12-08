@@ -28,9 +28,14 @@ const router = createRouter({
       component: () => import('../views/LoginView.vue')
     },
     {
-      path: '/caloriecalculator',
-      name: 'CalorieCalculator',
+      path: '/calorie',
+      name: 'calorie',
       component: () => import('../views/CalorieCalculatorView.vue')
+    },
+    {
+      path: '/guide',
+      name: 'guide',
+      component: () => import('../views/GuideView.vue')
     },
   ]
 })
