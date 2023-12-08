@@ -27,6 +27,10 @@ import { RouterLink, RouterView } from 'vue-router'
          </span> 
          <span class="menuitem">
           <span> | </span>
+          <RouterLink to="/workout">Workout</RouterLink>
+         </span> 
+         <span class="menuitem">
+          <span> | </span>
           <RouterLink to="/guide">Guide</RouterLink>
          </span> 
 
