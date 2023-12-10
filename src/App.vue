@@ -1,13 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 </script>
-
 <template>
   <div id ="layout">
   <header>
-
     <div class="wrapper">
-
       <nav>
           <span class="menuitem">
             <RouterLink to="/">Home</RouterLink>
@@ -30,21 +27,19 @@ import { RouterLink, RouterView } from 'vue-router'
          </span> 
          <span class="menuitem">
           <span> | </span>
-          <RouterLink to="/guide">Guide</RouterLink>
+          <RouterLink to="/workout">Workout</RouterLink>
          </span> 
          <span class="menuitem">
           <span> | </span>
-          <RouterLink to="/food">Food</RouterLink>
+          <RouterLink to="/guide">Guide</RouterLink>
          </span> 
           
         </nav>
     </div>
   </header>
 </div>
-
   <RouterView />
 </template>
-
 <style scoped>
 #layout {
   font-family: Avenir, Arial, Helvetica, sans-serif;
@@ -52,6 +47,8 @@ import { RouterLink, RouterView } from 'vue-router'
   -moz-osx-font-smooting: grayscale;
   text-align: center;
   color: #2c3e50;
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
 }
 nav {
   padding: 30px;
@@ -63,6 +60,4 @@ nav a {
 nav a.router-link-exact-active {
   color: rgb(24, 216, 126);
 }
-
-
 </style>
