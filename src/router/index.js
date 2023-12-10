@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { auth } from '@/js/firebase'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,8 +56,28 @@ const router = createRouter({
       name: 'strength-detail',
       component: () => import('../views/StrengthDetailView.vue')
     },
+    {
+      path: '/usersettings',
+      name: 'usersettings',
+      component: () => import('../views/UserSettingsView.vue')
+    },
   ]
 
 })
-
+router.beforeEach( (to) => {
+  console.log("Before each is executed")
+  console.log("to :" + to.name)
+  if(to.name === "workout" & !auth.currentUser) {
+    console.log("login users only")
+    router.push('/login')
+  }
+  if(to.name === "food" & !auth.currentUser) {
+    console.log("login users only")
+    router.push('/login')
+  }
+  if(to.name === "calorie" & !auth.currentUser) {
+    console.log("login users only")
+    router.push('/login')
+  }
+})
 export default router

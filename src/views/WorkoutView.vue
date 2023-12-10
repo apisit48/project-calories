@@ -43,10 +43,9 @@ onMounted(async () => {
     <div class="dropdown">
         <button class="dropdown-item">Select Workout</button>
         <div class="dropdown-content">
-            <a href="#" onclick="showWorkoutInfo()">Cardiovascular Exercises</a>
-            <a href="#" onclick="showWorkoutInfo()">Strength Training</a>
+            <a href="#cardio-info">Cardiovascular Exercises</a>
+            <a href="#strength-info">Strength Training</a>
         </div>
-        
     </div>
 
     <div id="cardio-info">

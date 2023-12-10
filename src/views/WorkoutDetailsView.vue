@@ -23,11 +23,19 @@ onMounted(fetchWorkout);
 </script>
 
 <template>
-  <div v-if="workout" class="workout-detail">
-        <h1>{{  workout.title }}</h1>
-        <p>Description: {{ workout.description }}  </p>
-        <p>Repetition: {{ workout.repetition }} </p>
-        <p>set: {{ workout.set }}</p>
-        <p>image_url: {{ workout.image }} </p>
-  </div>
-</template>
+    <div v-if="workout" class="strength-detail">
+      <h1>{{ workout.title }}</h1>
+      <img :src="workout.image" alt="Workout Image" />
+      <p>Description: {{ workout.description }}</p>
+      <p>Repetition: {{ workout.repetition }}</p>
+      <p>Set: {{ workout.set }}</p>
+    </div>
+  </template>
+  
+<style>
+.strength-detail img {
+  max-width: 200px; /* Adjust the value as needed */
+  max-height: 200px; /* Adjust the value as needed */
+  object-fit: contain; /* This ensures that the aspect ratio is maintained */
+}
+</style>
