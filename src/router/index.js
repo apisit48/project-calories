@@ -88,5 +88,9 @@ router.beforeEach( (to) => {
     console.log("login users only")
     router.push('/login')
   }
+  if(to.name === "guide" & !auth.currentUser) {
+    console.log("login users only")
+    router.push('/login')
+  }
 })
 export default router

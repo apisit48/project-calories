@@ -15,14 +15,6 @@ import { RouterLink, RouterView } from 'vue-router'
          </span> 
          <span class="menuitem">
           <span> | </span>
-          <RouterLink to="/register">Register</RouterLink>
-         </span> 
-         <span class="menuitem">
-          <span> | </span>
-          <RouterLink to="/login">Login</RouterLink>
-         </span> 
-         <span class="menuitem">
-          <span> | </span>
           <RouterLink to="/calorie">Calculator</RouterLink>
          </span> 
          <span class="menuitem">
@@ -36,6 +28,14 @@ import { RouterLink, RouterView } from 'vue-router'
          <span class="menuitem">
           <span> | </span>
           <RouterLink to="/food">Food</RouterLink>
+         </span>
+         <span class="menuitem">
+          <span> | </span>
+          <RouterLink to="/register">Register</RouterLink>
+         </span> 
+         <span class="menuitem">
+          <span> | </span>
+          <RouterLink to="/login">Login</RouterLink>
          </span> 
          <span class="menuitem">
              <span> | </span>
