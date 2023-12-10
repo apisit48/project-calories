@@ -120,18 +120,18 @@ function calculateBMI() {
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
+<style scoped>
   .calculator {
-    min-height: 100vh;
-    display: flex;
+    height: 100vh;
+    display: flex; 
     align-items: center;
-    text-align: center;                          
+    text-align: center;
+    justify-content: center;                          
   }
   .calorie{
   min-height: 100vh;
   align-items: center;
   text-align: center;
 }
-}
+
 </style>

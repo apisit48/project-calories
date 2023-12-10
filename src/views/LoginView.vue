@@ -38,16 +38,16 @@ function resetForm () {
     <h1>Login</h1>
         <form @submit.prevent="login">
             <div class="form-item">
-                <label>e-mail </label>
+                <label>E-mail </label>
                 <input v-model="email" id="email" type="text" />
             </div>
             <div class="form-item">
-                <label>password </label>
+                <label>Password </label>
                 <input v-model="password" id="password" type="password" />
             </div>
             <div class="form-item">
-                <button @click.prevent="resetForm">Reset </button>
-                <button type="submit">Login </button>
+                <button class="btn1" @click.prevent="resetForm">Reset </button>
+                <button class="btn2" type="submit">Login </button>
             </div>           
         </form>
 </div>
@@ -55,7 +55,30 @@ function resetForm () {
 
 
 <style scoped>
+.login {
+  margin-top: 12.5%; /* doesnt center properly*/
+  font-family: 'Afacad', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 8em;
+}
 .form-item {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  align-items: normal;
+  text-align: center;
+}
+.form-item input {
+  margin-left: 5rem;
+}
+.form-item label {
+  position: absolute;
+}
+.btn1 {
+  margin-right: 10px;
+}
+.btn2 {
+  margin-left: 10px;
 }
 </style>
