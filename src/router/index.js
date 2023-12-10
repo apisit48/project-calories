@@ -42,6 +42,11 @@ const router = createRouter({
       component: () => import('../views/FoodView.vue')
     },
     {
+      path: '/food-detail:id',
+      name: 'food-detail',
+      component: () => import('../views/FoodDetailView.vue')
+    },
+    {
       path: '/workout',
       name: 'workout',
       component: () => import('../views/WorkoutView.vue')
@@ -76,6 +81,14 @@ router.beforeEach( (to) => {
     router.push('/login')
   }
   if(to.name === "calorie" & !auth.currentUser) {
+    console.log("login users only")
+    router.push('/login')
+  }
+  if(to.name === "usersettings" & !auth.currentUser) {
+    console.log("login users only")
+    router.push('/login')
+  }
+  if(to.name === "guide" & !auth.currentUser) {
     console.log("login users only")
     router.push('/login')
   }
