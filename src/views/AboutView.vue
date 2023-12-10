@@ -46,7 +46,7 @@
 }
 html,body,footer {
   width: 100%;
-  height: 100%;
+  height: 90%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -89,7 +89,7 @@ footer {
   text-align: center;
   background-color: #212121;
   color: whitesmoke;
-  height: 150px;
+  height: 100px;
   width: 100%;
 }
 </style>

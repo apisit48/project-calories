@@ -1,42 +1,42 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const gender = ref('male');
-const age = ref(null);
-const weight = ref(null);
-const height = ref(null);
-const activityLevel = ref('sedentary');
-const calories = ref(null);
+const gender = ref('male')
+const age = ref(null)
+const weight = ref(null)
+const height = ref(null)
+const activityLevel = ref('sedentary')
+const calories = ref(null)
 
 const calculateCalories = () => {
-  let bmr;
+  let bmr
 
   if (gender.value === 'male') {
-    bmr = 88.362 + 13.397 * weight.value + 4.799 * height.value - 5.677 * age.value;
+    bmr = 88.362 + 13.397 * weight.value + 4.799 * height.value - 5.677 * age.value
   } else {
-    bmr = 447.593 + 9.247 * weight.value + 3.098 * height.value - 4.33 * age.value;
+    bmr = 447.593 + 9.247 * weight.value + 3.098 * height.value - 4.33 * age.value
   }
 
   switch (activityLevel.value) {
     case 'sedentary':
-      calories.value = bmr * 1.2;
-      break;
+      calories.value = bmr * 1.2
+      break
     case 'lightlyActive':
-      calories.value = bmr * 1.375;
-      break;
+      calories.value = bmr * 1.375
+      break
     case 'moderatelyActive':
-      calories.value = bmr * 1.55;
-      break;
+      calories.value = bmr * 1.55
+      break
     case 'veryActive':
-      calories.value = bmr * 1.725;
-      break;
+      calories.value = bmr * 1.725
+      break
     case 'extraActive':
-      calories.value = bmr * 1.9;
-      break;
+      calories.value = bmr * 1.9
+      break
     default:
-      calories.value = null;
+      calories.value = null
   }
-};
+}
 
 function calculateBMI() {
   var height = document.getElementById('height').value
@@ -68,41 +68,37 @@ function calculateBMI() {
 <template>
   <div class="calculator">
     <div id="calc">
-      <h1>BMI Calculator with Vue</h1>
+      <h1>BMI Calculator</h1>
+      <div class="settings">
+        <label for="height">Height (cm) </label>
+        <input type="number" v-model="height" placeholder="Enter height in cm" />
 
-      <label for="height">Height (cm): </label>
-      <input type="number" v-model="height" placeholder="Enter height in cm" />
-
-      <br />
-
-      <label for="weight">Weight (kg): </label>
-      <input type="number" v-model="weight" placeholder="Enter weight in kg" />
-
-      <br />
-
+        <label for="weight">Weight (kg) </label>
+        <input type="number" v-model="weight" placeholder="Enter weight in kg" />
+      </div>
       <button @click="calculateBMI">Calculate BMI</button>
 
       <div id="result">{{ result }}</div>
     </div>
   </div>
   <div class="calorie">
-    <h2>Calorie Calculator</h2>
+    <h1>Calorie Calculator</h1>
 
     <label for="gender">Gender:</label>
     <select v-model="gender" id="gender">
       <option value="male">Male</option>
       <option value="female">Female</option>
     </select>
+    <div class="settings">
+      <label for="age">Age</label>
+      <input type="number" v-model="age" id="age" />
 
-    <label for="age">Age:</label>
-    <input type="number" v-model="age" id="age" />
+      <label for="weight">Weight (kg)</label>
+      <input type="number" v-model="weight" id="weight" />
 
-    <label for="weight">Weight (kg):</label>
-    <input type="number" v-model="weight" id="weight" />
-
-    <label for="height">Height (cm):</label>
-    <input type="number" v-model="height" id="height" />
-
+      <label for="height">Height (cm)</label>
+      <input type="number" v-model="height" id="height" />
+    </div>
     <label for="activityLevel">Activity Level:</label>
     <select v-model="activityLevel" id="activityLevel">
       <option value="sedentary">Sedentary</option>
@@ -118,20 +114,70 @@ function calculateBMI() {
       <h3>Your estimated daily calories: {{ calories.toFixed(2) }}</h3>
     </div>
   </div>
+  <footer>
+    <h3>&copy; 2023 Project Calories. All rights reserved.</h3>
+  </footer>
 </template>
 
 <style scoped>
-  .calculator {
-    height: 100vh;
-    display: flex; 
-    align-items: center;
-    text-align: center;
-    justify-content: center;                          
-  }
-  .calorie{
-  min-height: 100vh;
+* {
+  font-family: 'Afacad', sans-serif;
+  font-size: 18px;
+}
+.calculator {
+  height: 32vh;
+  display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+  background-color: #212121;
+  color: whitesmoke;
+}
+.calorie {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+  background-color: #212121;
+  color: whitesmoke;
+}
+.calorie select {
+  padding: 5px;
+  margin: 10px;
+}
+.calorie button{
+  margin-bottom: 20px;
 }
 
+div.settings {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+  margin-bottom: 15px;
+}
+div.settings label {
+  text-align: right;
+}
+div.settings label:after {
+  content: ':';
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #212121;
+  color: whitesmoke;
+  height: 150px;
+  width: 99%;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+}
 </style>

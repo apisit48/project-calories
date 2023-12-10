@@ -4,18 +4,21 @@
 <template>
 <body>
     <div>
-        <h1>Project Calories</h1>
+        <h1>Project Calorie</h1>
         <p>Welcome to project calories where we begin a better life with you!</p>
     </div>
 </body>
 </template>
 
 <style scoped>
+*{
+  font-family: 'Afacad', sans-serif;
+}
  
   body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            height: 94vh;
             overflow: hidden;
             background: linear-gradient(to bottom, #c7ecc7 0%, #038b03c9 50%, #c7ecc7 100%);
             display: flex;
@@ -23,7 +26,6 @@
             justify-content: center;
             text-align: center;
             color: #fff;
-            font-family: 'Afacad', sans-serif;
             font-weight: bold;
             outline: #4CAF50 solid 10px;
         }

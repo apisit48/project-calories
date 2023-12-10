@@ -53,7 +53,8 @@ import { RouterLink, RouterView } from 'vue-router'
   text-align: center;
 }
 nav {
-  padding: 30px;
+  padding: 15px;
+  padding-top: 5px;
 }
 nav a {
   font-weight: bold;
