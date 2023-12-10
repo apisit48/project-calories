@@ -4,55 +4,62 @@
 
 <template>
   <div class="workout">
-    <h1>Register</h1>
-    <p>Cardiovascular Exercises:
-Brisk Walking or Jogging:
+    <h1>Weight Loss Workout Plan</h1>
 
-Start with 20-30 minutes of brisk walking or jogging. Gradually increase the intensity and duration over time.
-Cycling:
+<div class="dropdown">
+    <button class="dropdown-item">Select Workout</button>
+    <div class="dropdown-content">
+        <a href="#" onclick="showWorkoutInfo()">Cardiovascular Exercises</a>
+        <a href="#" onclick="showWorkoutInfo()">Strength Training</a>
+        <a href="#" onclick="showWorkoutInfo()">Flexibility and Balance</a>
+    </div>
+</div>
 
-Incorporate cycling, either outdoors or on a stationary bike, for 20-30 minutes. It's a low-impact exercise that's gentle on the joints.
-Jumping Rope:
-
-Jumping rope is an excellent full-body workout. Aim for 10-15 minutes to get your heart rate up.
-High-Intensity Interval Training (HIIT):
-
-Include HIIT workouts 2-3 times a week. These involve short bursts of intense activity followed by brief rest periods. For example, alternate between 30 seconds of high-intensity exercises (e.g., jumping jacks, burpees) and 30 seconds of rest.
-Strength Training:
-Bodyweight Exercises:
-
-Include bodyweight exercises such as squats, lunges, push-ups, and planks. Perform 2-3 sets of 12-15 repetitions for each exercise.
-Dumbbell or Resistance Training:
-
-Integrate dumbbell or resistance band exercises for all major muscle groups (legs, chest, back, shoulders, arms). Aim for 2-3 strength training sessions per week.
-Flexibility and Balance:
-Yoga or Pilates:
-Incorporate yoga or Pilates to improve flexibility, balance, and core strength. These exercises also promote relaxation and can help manage stress.
-Tips for Weight Loss Workouts:
-Consistency is Key:
-
-Aim for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity per week, along with muscle-strengthening activities on two or more days a week.
-Progress Gradually:
-
-If you're new to exercise, start slowly and gradually increase the intensity and duration of your workouts.
-Mix It Up:
-
-Keep your workouts interesting by trying different activities. This not only prevents boredom but also challenges different muscle groups.
-Stay Hydrated:
-
-Drink plenty of water before, during, and after your workouts.
-Listen to Your Body:
-
-Pay attention to how your body responds to exercise. If you experience pain or discomfort, modify your workouts or consult a fitness professional.</p>
+<div id="workout-info">
+    <h2>Cardiovascular Exercises</h2>
+    <p>
+        Incorporate brisk walking, jogging, cycling, jumping rope, and high-intensity interval training (HIIT) for effective cardiovascular workouts.
+    </p>
+</div>
 </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
   .register {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+
   }
 }
+.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
 </style>

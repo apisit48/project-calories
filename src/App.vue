@@ -47,6 +47,8 @@ import { RouterLink, RouterView } from 'vue-router'
   -moz-osx-font-smooting: grayscale;
   text-align: center;
   color: #2c3e50;
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
 }
 nav {
   padding: 30px;

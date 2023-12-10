@@ -1,4 +1,43 @@
 <script setup>
+import { ref } from 'vue';
+
+const gender = ref('male');
+const age = ref(null);
+const weight = ref(null);
+const height = ref(null);
+const activityLevel = ref('sedentary');
+const calories = ref(null);
+
+const calculateCalories = () => {
+  let bmr;
+
+  if (gender.value === 'male') {
+    bmr = 88.362 + 13.397 * weight.value + 4.799 * height.value - 5.677 * age.value;
+  } else {
+    bmr = 447.593 + 9.247 * weight.value + 3.098 * height.value - 4.33 * age.value;
+  }
+
+  switch (activityLevel.value) {
+    case 'sedentary':
+      calories.value = bmr * 1.2;
+      break;
+    case 'lightlyActive':
+      calories.value = bmr * 1.375;
+      break;
+    case 'moderatelyActive':
+      calories.value = bmr * 1.55;
+      break;
+    case 'veryActive':
+      calories.value = bmr * 1.725;
+      break;
+    case 'extraActive':
+      calories.value = bmr * 1.9;
+      break;
+    default:
+      calories.value = null;
+  }
+};
+
 function calculateBMI() {
   var height = document.getElementById('height').value
   var weight = document.getElementById('weight').value
@@ -28,24 +67,56 @@ function calculateBMI() {
 
 <template>
   <div class="calculator">
-    <h1>Calculator</h1>
+    <div id="calc">
+      <h1>BMI Calculator with Vue</h1>
+
+      <label for="height">Height (cm): </label>
+      <input type="number" v-model="height" placeholder="Enter height in cm" />
+
+      <br />
+
+      <label for="weight">Weight (kg): </label>
+      <input type="number" v-model="weight" placeholder="Enter weight in kg" />
+
+      <br />
+
+      <button @click="calculateBMI">Calculate BMI</button>
+
+      <div id="result">{{ result }}</div>
+    </div>
   </div>
-  <div id="calculator">
-    <h1>BMI Calculator with Vue</h1>
+  <div class="calorie">
+    <h2>Calorie Calculator</h2>
 
-    <label for="height">Height (cm): </label>
-    <input type="number" v-model="height" placeholder="Enter height in cm" />
+    <label for="gender">Gender:</label>
+    <select v-model="gender" id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
 
-    <br />
+    <label for="age">Age:</label>
+    <input type="number" v-model="age" id="age" />
 
-    <label for="weight">Weight (kg): </label>
-    <input type="number" v-model="weight" placeholder="Enter weight in kg" />
+    <label for="weight">Weight (kg):</label>
+    <input type="number" v-model="weight" id="weight" />
 
-    <br />
+    <label for="height">Height (cm):</label>
+    <input type="number" v-model="height" id="height" />
 
-    <button @click="calculateBMI">Calculate BMI</button>
+    <label for="activityLevel">Activity Level:</label>
+    <select v-model="activityLevel" id="activityLevel">
+      <option value="sedentary">Sedentary</option>
+      <option value="lightlyActive">Lightly Active</option>
+      <option value="moderatelyActive">Moderately Active</option>
+      <option value="veryActive">Very Active</option>
+      <option value="extraActive">Extra Active</option>
+    </select>
 
-    <div id="result">{{ result }}</div>
+    <button @click="calculateCalories">Calculate Calories</button>
+
+    <div v-if="calories !== null">
+      <h3>Your estimated daily calories: {{ calories.toFixed(2) }}</h3>
+    </div>
   </div>
 </template>
 
@@ -55,6 +126,12 @@ function calculateBMI() {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    text-align: center;                          
   }
+  .calorie{
+  min-height: 100vh;
+  align-items: center;
+  text-align: center;
+}
 }
 </style>
