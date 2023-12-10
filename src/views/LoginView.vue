@@ -16,7 +16,7 @@ signInWithEmailAndPassword(auth, email.value, password.value)
             const user = userCredential.user;
             console.log(user)
             console.log(userCredential)
-            router.push('/books')
+            router.push('/home')
         })
         .catch((error) => {
             const errorCode = error.code;

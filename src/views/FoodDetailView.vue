@@ -41,4 +41,19 @@ onMounted(fetchWorkout);
   max-height: 200px; 
   object-fit: contain; 
 }
+.food-detail{
+  background-color: #212122;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; 
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 1vh;
+  padding: 7%;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+  color: whitesmoke;
+  font-size: 1.12em;
+}
 </style>
