@@ -33,18 +33,18 @@ function resetForm() {
 </script>
 
 <template>
-    <header>
-      <h1>Project Calorie</h1>
-    </header>
+  <header>
+    <h1>Project Calorie</h1>
+  </header>
   <div class="register">
     <h1>Register</h1>
     <form @submit.prevent="submitForm">
       <div class="settings">
         <label>E-mail </label>
-        <input v-model="email" id="email" type="text" />
+        <input v-model="email" id="email" type="text" placeholder="Enter mail here"/>
 
         <label>Password </label>
-        <input v-model="password" id="password" type="password" />
+        <input v-model="password" id="password" type="password" placeholder="Enter password here" />
       </div>
       <div class="form-item">
         <button class="btn1" @click.prevent="resetForm">Reset</button>
@@ -53,12 +53,12 @@ function resetForm() {
     </form>
   </div>
   <footer>
-      <h3>&copy; 2023 Project Calories. All rights reserved.</h3>
-    </footer>
+    <h3>&copy; 2023 Project Calories. All rights reserved.</h3>
+  </footer>
 </template>
 
 <style scoped>
-*{
+* {
   font-family: 'Afacad', sans-serif;
 }
 .register {
@@ -77,7 +77,6 @@ function resetForm() {
   font-size: 18px;
   color: whitesmoke;
   background-color: #212121;
-
 }
 .form-item {
   margin-bottom: 1rem;
@@ -85,13 +84,17 @@ function resetForm() {
   text-align: center;
 }
 div.settings {
-    display:grid;
-    grid-template-columns: max-content max-content;
-    grid-gap:5px;
-    margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+  margin-bottom: 25px;
 }
-div.settings label       { text-align:right; }
-div.settings label:after { content: ":"; }
+div.settings label {
+  text-align: right;
+}
+div.settings label:after {
+  content: ':';
+}
 .btn1 {
   margin-right: 10px;
 }
@@ -100,7 +103,7 @@ div.settings label:after { content: ":"; }
 }
 
 header {
-font-family: 'Afacad', sans-serif; 
+  font-family: 'Afacad', sans-serif;
   background-color: #212121;
   color: #ffffff;
   text-align: center;
@@ -120,5 +123,6 @@ footer {
   width: 99%;
   border: 10px whitesmoke solid;
   outline: 5px black solid;
+  font-size: 18px;
 }
 </style>

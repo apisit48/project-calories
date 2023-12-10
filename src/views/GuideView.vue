@@ -93,7 +93,19 @@
 </template>
 
 <style>
-.guide{
+*{
   font-family: 'Afacad', sans-serif;
+}
+.guide{
+  background-color: #212122;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; 
+  margin: 0 auto;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+  color: whitesmoke;
+  font-size: 1.12em;
 }
 </style>

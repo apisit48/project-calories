@@ -20,8 +20,7 @@ async function fetchWorkout() {
 }
 
 onMounted(fetchWorkout);
-</script>
-
+</script >
 <template>
     <div v-if="workout" class="strength-detail">
       <h1>{{ workout.title }}</h1>
@@ -33,9 +32,29 @@ onMounted(fetchWorkout);
   </template>
   
 <style>
+*{
+  font-family: 'Afacad', sans-serif;
+}
 .strength-detail img {
-  max-width: 200px; /* Adjust the value as needed */
-  max-height: 200px; /* Adjust the value as needed */
-  object-fit: contain; /* This ensures that the aspect ratio is maintained */
+  max-width: 200px; 
+  max-height: 200px; 
+  object-fit: contain; 
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+}
+.strength-detail{
+  background-color: #212122;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; 
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 1vh;
+  padding: 200px;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+  color: whitesmoke;
+  font-size: 1.12em;
 }
 </style>

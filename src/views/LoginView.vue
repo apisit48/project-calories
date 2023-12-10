@@ -43,10 +43,10 @@ function resetForm () {
         <form @submit.prevent="login">
             <div class="settings">
                 <label>E-mail </label>
-                <input v-model="email" id="email" type="text" />
+                <input v-model="email" id="email" type="text" placeholder="Enter mail here"/>
 
                 <label>Password </label>
-                <input v-model="password" id="password" type="password" />
+                <input v-model="password" id="password" type="password" placeholder="Enter password here" />
             </div>
             <div class="form-item">
                 <button class="btn1" @click.prevent="resetForm">Reset </button>
@@ -122,5 +122,6 @@ footer {
   width: 99%;
   border: 10px whitesmoke solid;
   outline: 5px black solid;
+  font-size: 18px;
 }
 </style>

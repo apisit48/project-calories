@@ -27,7 +27,7 @@
             text-align: center;
             color: #fff;
             font-weight: bold;
-            outline: #4CAF50 solid 10px;
+            outline: #4CAF50 solid 7px;
         }
 
         h1 {

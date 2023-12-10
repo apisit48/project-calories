@@ -76,6 +76,7 @@ section {
 }
 
 h2 {
+  margin-top: 0px;
   color: #343a40;
 }
 p {

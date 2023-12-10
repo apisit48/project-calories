@@ -42,15 +42,19 @@ onMounted(() => {
 .product-card {
   padding: 10px; 
   width:200px; 
-  max-height: 200px; 
+  height: 200px; 
   box-sizing: border-box; 
   cursor: pointer;
-  border: 1px solid #39495c;
+  border: 4px solid black;
   margin-top:  18px;
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center; 
+  gap:10%;
+  background-color:black;
+  color:whitesmoke;
 }
 
 .product-card:hover {

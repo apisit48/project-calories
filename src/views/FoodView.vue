@@ -38,24 +38,54 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div class="finfo">
+    <h1>Food Importance</h1>
+    <section>
+    <p>Food is crucial for fitness as it provides the necessary nutrients to fuel and support various physiological processes in the body. A balanced diet contributes to overall health, energy levels, and optimal performance during workouts. <br> Here's a list of macronutrients and their calorie content per gram:</p>
+    <ul>
+        <li>Protein: 4 calories per gram</li>
+        <li>Carbohydrates: 4 calories per gram</li>
+        <li>Fat: 9 calories per gram</li>
+    </ul>
+  </section>
+  </div>
     
-    <div class="products">
+    <div class="fproducts">
         <ProductCardFood v-for="workout in cardio" :key="workout.id" :workoutId="workout.id" />
-    </div>;
+    </div>
 
 
 </template>
 
-<style>
-.products {
+<style scoped>
+* {
+  text-decoration: none;
+  font-family: 'Afacad', sans-serif;
+  color: whitesmoke; 
+
+}
+.fproducts {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  margin-bottom: 10px;
-  margin-left: 460px;
+  align-items: center;
   justify-content: center;
-  background-color: rgb(172, 179, 179);
-  border: 3px solid #39495c;
+  background-color: #212121;
+  padding-bottom: 20px;
+  outline: 5px black solid;
+  border: 5px solid whitesmoke;
+  border-bottom: 0;
+}
+.finfo{
+  text-align: center;
+  background-color: #212121;
+  padding-bottom: 11vh;
+  outline: 5px black solid;
+  border: 5px solid whitesmoke;
+}
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
     
 </style>

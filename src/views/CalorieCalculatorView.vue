@@ -91,13 +91,13 @@ function calculateBMI() {
     </select>
     <div class="settings">
       <label for="age">Age</label>
-      <input type="number" v-model="age" id="age" />
+      <input type="number" v-model="age" id="age" placeholder="Enter age" />
 
       <label for="weight">Weight (kg)</label>
-      <input type="number" v-model="weight" id="weight" />
+      <input type="number" v-model="weight" id="weight" placeholder="Enter height in cm" />
 
       <label for="height">Height (cm)</label>
-      <input type="number" v-model="height" id="height" />
+      <input type="number" v-model="height" id="height" placeholder="Enter height in cm" />
     </div>
     <label for="activityLevel">Activity Level:</label>
     <select v-model="activityLevel" id="activityLevel">

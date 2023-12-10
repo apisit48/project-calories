@@ -37,6 +37,10 @@ import { RouterLink, RouterView } from 'vue-router'
           <span> | </span>
           <RouterLink to="/guide">Guide</RouterLink>
          </span> 
+         <span class="menuitem">
+          <span> | </span>
+          <RouterLink to="/usersettings">Settings</RouterLink>
+         </span> 
 
         </nav>
     </div>
@@ -46,6 +50,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+*{ text-decoration: none;}
 #layout {
   font-family: Avenir, Arial, Helvetica, sans-serif;
   -webkit-font-smooting: antialiased;
@@ -58,7 +63,7 @@ nav {
 }
 nav a {
   font-weight: bold;
-  color: rgb(230, 124, 32);
+  color: black;
 }
 nav a.router-link-exact-active {
   color: rgb(24, 216, 126);

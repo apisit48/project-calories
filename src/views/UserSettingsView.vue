@@ -36,3 +36,22 @@ function userSignOut() {
     
 </div>
 </template>
+<style scoped>
+*{
+  font-family: 'Afacad', sans-serif;
+}
+.usersettings{
+  background-color: #212122;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; 
+  max-width: 800px;
+  margin: 7% auto;
+  padding: 200px;
+  border: 10px whitesmoke solid;
+  outline: 5px black solid;
+  color: whitesmoke;
+  font-size: 1.12em;
+}
+</style>
