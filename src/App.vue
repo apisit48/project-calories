@@ -33,6 +33,10 @@ import { RouterLink, RouterView } from 'vue-router'
           <span> | </span>
           <RouterLink to="/guide">Guide</RouterLink>
          </span> 
+         <span class="menuitem">
+          <span> | </span>
+          <RouterLink to="/food">Food</RouterLink>
+         </span> 
           
         </nav>
     </div>
@@ -40,6 +44,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </div>
   <RouterView />
 </template>
+
 <style scoped>
 #layout {
   font-family: Avenir, Arial, Helvetica, sans-serif;

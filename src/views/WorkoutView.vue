@@ -1,4 +1,38 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+import { db } from '@/js/firebase.js'
+import { collection, onSnapshot } from "firebase/firestore";
+import ProductCard from '@/components/ProductCardWorkout.vue'
+import ProductCardStrength from '@/components/ProductCardStrength.vue'
+
+
+const cardio = ref([])
+
+async function getCardio() {
+
+
+onSnapshot(collection(db, 'workout'), (querySnapshot) => {
+  let cardioSnapshot = []
+  querySnapshot.forEach((doc) => {
+    let cardios = {
+      "id": doc.id,
+      "title": doc.data().title,
+      "description": doc.data().description,
+      "repetition": doc.data().repetition,
+      "set": doc.data().set,
+      "image": doc.data().image
+    }
+
+    cardioSnapshot.push(cardios)
+  })
+  cardio.value = cardioSnapshot
+})
+}
+
+onMounted(async () => {
+  console.log("Connecting to Firebase")
+  await getCardio()
+})
 
 </script>
 
@@ -6,30 +40,42 @@
   <div class="workout">
     <h1>Weight Loss Workout Plan</h1>
 
-<div class="dropdown">
-    <button class="dropdown-item">Select Workout</button>
-    <div class="dropdown-content">
-        <a href="#" onclick="showWorkoutInfo()">Cardiovascular Exercises</a>
-        <a href="#" onclick="showWorkoutInfo()">Strength Training</a>
-        <a href="#" onclick="showWorkoutInfo()">Flexibility and Balance</a>
+    <div class="dropdown">
+        <button class="dropdown-item">Select Workout</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showWorkoutInfo()">Cardiovascular Exercises</a>
+            <a href="#" onclick="showWorkoutInfo()">Strength Training</a>
+        </div>
+        
     </div>
-</div>
 
-<div id="workout-info">
-    <h2>Cardiovascular Exercises</h2>
-    <p>
-        Incorporate brisk walking, jogging, cycling, jumping rope, and high-intensity interval training (HIIT) for effective cardiovascular workouts.
-    </p>
-</div>
-</div>
+    <div id="cardio-info">
+        <h2>Cardiovascular Exercises</h2>
+        <p>
+            Incorporate brisk walking, jogging, cycling, jumping rope, and high-intensity interval training (HIIT) for effective cardiovascular workouts.
+        </p>
+    </div>
+    
+    <div class="products">
+        <ProductCard v-for="workout in cardio" :key="workout.id" :workoutId="workout.id" />
+    </div>;
+
+    <div id="strength-info">
+        <h2>Strength Traning</h2>
+        <p>
+            Incorporate brisk walking, jogging, cycling, jumping rope, and high-intensity interval training (HIIT) for effective cardiovascular workouts.
+        </p>
+    </div>
+
+    <div class="products-strength">
+        <ProductCardStrength v-for="workout in cardio" :key="workout.id" :workoutId="workout.id" />
+    </div>;
+
+
+    </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .register {
-
-  }
-}
 .dropdown {
             display: inline-block;
         }
@@ -62,4 +108,25 @@
             color: #666;
             line-height: 1.5;
         }
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  margin-bottom: 10px;
+  margin-left: 460px;
+  justify-content: center;
+  background-color: rgb(172, 179, 179);
+  border: 3px solid #39495c;
+}
+.products-strength {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  margin-bottom: 10px;
+  margin-left: 460px;
+  justify-content: center;
+  background-color: rgb(172, 179, 179);
+  border: 3px solid #39495c;
+}
+    
 </style>
