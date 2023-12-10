@@ -53,6 +53,7 @@ function resetForm() {
 </template>
 
 <style scoped>
+html {background-color: black}
 .register {
   margin-top: 12.5%; /* doesnt center properly*/
   font-family: 'Afacad', sans-serif; 
@@ -61,6 +62,12 @@ function resetForm() {
   align-items: center;
   justify-content: center;
   height: 8em;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  border: 10px red solid;
+  border-radius: 7px/7px;
+  font-size: 18px;
+  background-color: coral;
 }
 .form-item {
   margin-bottom: 1rem;

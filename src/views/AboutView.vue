@@ -18,7 +18,7 @@
         At Project Calories, we offer a user-friendly platform that caters specifically to
         beginners. Our website provides:
       </p>
-      <ul>gi
+      <ul>
         <li>Informative food and workout knowledge at a click of a button</li>
         <li>Calorie tracking tools to help you meet your nutritional needs</li>
         <li>Informative articles on workouts, nutrition, and healthy living</li>
