@@ -41,6 +41,9 @@
 </template>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
 html,body,footer {
   width: 100%;
   height: 100%;

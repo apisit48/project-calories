@@ -7,9 +7,9 @@
 
     <h1>How to Start Exercising: A Beginner’s Guide to Working Out</h1>
     <div>
-      <img src="https://media.self.com/photos/64e4c2d4995b61624bd2f5dd/master/pass/starting%20to%20work%20out%20again.jpg" alt="Description of image">
-
+    <img src="https://media.self.com/photos/64e4c2d4995b61624bd2f5dd/master/pass/starting%20to%20work%20out%20again.jpg" alt="Description of image" style="width: 600px; height: auto;">
     </div>
+
     <p>
       Regular exercise is one of the best things you can do for your health.<br> 
 
@@ -46,5 +46,7 @@
 </template>
 
 <style>
-
+.guide{
+  font-family: 'Afacad', sans-serif;
+}
 </style>
