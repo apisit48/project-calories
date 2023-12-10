@@ -5,7 +5,7 @@
 <body>
     <div>
         <h1>Project Calories</h1>
-        <p>Welcome to your homepage with three layers of green background!</p>
+        <p>Welcome to project calories where we begin a better life with you!</p>
     </div>
 </body>
 </template>
